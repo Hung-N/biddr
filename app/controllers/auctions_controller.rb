@@ -36,7 +36,7 @@ class AuctionsController < ApplicationController
   private
 
   def auction_params
-    auction_params = params.require(:auction).permit([:title, :body, :category_id, :image, { tag_ids: [] }])
+    auction_params = params.require(:auction).permit([:title, :description, :reserve])
   end
 
   def find_auction
