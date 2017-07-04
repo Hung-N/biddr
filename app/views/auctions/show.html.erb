@@ -1,2 +1,7 @@
-<h1>Auctions#show</h1>
-<p>Find me in app/views/auctions/show.html.erb</p>
+
+<div class="container">
+  <h2><%= @auction.title %></h2>
+  <p><strong>Description: </strong><%= @auction.description %></p>
+  <p><strong>Listed By: </strong><%= @auction.user&.full_name %></p>
+  <p><strong>Reserve price: </strong><%= number_to_currency(@auction.reserve) %></p>
+</div>

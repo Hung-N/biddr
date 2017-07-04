@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :auctions, only: [:index, :new, :create, :update, :edit, :destroy]
+  resources :auctions
 
 
 end
