@@ -1,2 +1,10 @@
 <h1>Auctions#index</h1>
 <p>Find me in app/views/auctions/index.html.erb</p>
+<hr>
+
+<div class="container">
+  <% @auctions.each do |auction| %>
+    <%= link_to auction.title, auction_path(auction) %>
+    <hr>
+  <% end %>
+</div>
