@@ -1,6 +1,6 @@
 class AuctionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_auction, only: [:show, :edit, :update, :destroy]
+  before_action :find_auction, only: [:show]
 
   def index
     @auctions = Auction.all
@@ -24,15 +24,6 @@ class AuctionsController < ApplicationController
   def show
     @bid = Bid.new
     @bids = @auction.bids.order(created_at: :desc)
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
