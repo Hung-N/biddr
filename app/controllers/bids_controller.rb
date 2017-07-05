@@ -8,14 +8,16 @@ class BidsController < ApplicationController
     @bid = Bid.new bid_params
     @bid.auction = @auction
 
-
-    if @bid.save
-        format.html { redirect_to auction_path(@auction), notice: 'Bid submitted!' }
+    # @high_bid = @auction.bids.order(bid: :desc).first.bid
+    respond_to do |format|
+      if @bid.save
+        format.html { redirect_to auction_bids_path(@auction), notice: 'Bid submitted!' }
         # format.js { render :create_success }
       else
-        # format.html { render 'home/index' }
+        format.html { render 'auctions/show' }
         # format.js { render :create_failure }
       end
+    end
   end
 
   def destroy

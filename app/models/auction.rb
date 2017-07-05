@@ -1,5 +1,5 @@
 class Auction < ApplicationRecord
-  
+
   belongs_to :user, optional: true
   has_many :bids, dependent: :destroy
 
@@ -10,6 +10,8 @@ class Auction < ApplicationRecord
   before_validation :titleize_title
 
   private
+
+  
 
   def titleize_title
     self.title = title.titleize if title.present?

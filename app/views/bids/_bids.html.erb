@@ -1,0 +1,10 @@
+
+<hr>
+
+<% bids&.each do |bid| %>
+  <p><%= bid.created_at %></p>
+  <p><strong>Bid: </strong><%= number_to_currency(bid.bid) %></p>
+  <p><strong>Bidder: </strong><%= bid.auction.user&.full_name %>
+  <hr>
+<% end %>
+</div>
