@@ -1,5 +1,7 @@
 class Auction < ApplicationRecord
-  belongs_to :user
+  
+  belongs_to :user, optional: true
+  has_many :bids, dependent: :destroy
 
   validates :title, {presence: true}
   validates :description, {length: {minimum: 5, maximum: 1000}}
